@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <style>
+    @font-face {
+      font-family: "Font1"; /* Name to reference the font */
+      src: url("assets/fonts/font1.ttf") format("ttf"); /* Path to your font file */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .hero-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ace4e3;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .sub-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #003e29;
+    }
+
+    .title {
+      font-size: 5rem;
+      font-weight: 700;
+      color: #003e29;
+    }
+
+    .card {
+      --bs-card-border-color: unset;
+    }
+
+    .main-flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .cardborder {
+      border: 3px solid #f58bcf;
+      padding: 15px;
+      margin: 40px;
+      border-radius: 10px;
+    }
+    .card-num {
+      font-size: 14rem;
+      color: #ace4e3;
+      padding: unset;
+      margin: unset;
+    }
+
+    .font1 {
+      font-family: "Font1";
+    }
+
+    .bgcolor-myth {
+      background-color: #0b4350;
+    }
+
+    .aqua {
+      color: #ace4e3;
+    }
+
+    .pink {
+      color: #f58bcf;
+    }
+
+    .bgcolor-card {
+      background-color: #0b4350;
+    }
+
+    .card-title {
+      color: #ace4e3;
+      font-size: 2rem;
+    }
+
+    .maintext {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      animation: slide-up 5s forwards; /* Adjust duration as needed */
+      visibility: hidden;
+    }
+
+    .title span {
+      display: block;
+      margin-left: 70%;
+      color: #003e29;
+    }
+
+    .card-p {
+      font-size: 1.5rem;
+      color: #f58bcf;
+    }
+
+    /* second page  */
+    .section2-container {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .corner-text {
+      position: absolute;
+      font-size: 24px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      animation: slide-up 5s forwards; /* Adjust duration as needed */
+      visibility: hidden;
+    }
+
+    .top-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .top-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    .bottom-left {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .bottom-right {
+      bottom: 10px;
+      right: 10px;
+    }
+
+    @keyframes slide-up {
+      from {
+        transform: translateY(100%);
+        visibility: visible;
+      }
+      to {
+        transform: translateY(0%);
+      }
+    }
+
+    .card1{
+        z-index: 1;
+    }
+
+    .card2{
+        z-index: 2;
+    }
+
+    .card3{
+        z-index: 3;
+    }
+
+    .card4{
+        z-index: 4;
+    }
+
+    .card5{
+        z-index: 5;
+    }
+
+    
+  </style>
+
+  <script>
+        let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".cards",
+            pin: true,
+            pinSpacing: true,
+            markers: true,
+            start: "top top", // when the top of the trigger hits the top of the viewport
+            end: "+=1000", // end after scrolling 1000px beyond the start
+            scrub: 1 // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        }
+        });
+
+        tl.from(".card1", {
+        yPercent: 100,
+        opacity: 0
+        });
+        tl.from(".card2", {
+        yPercent: 200,
+        opacity: 0
+        });
+        tl.from(".card3", {
+        yPercent: 200,
+        opacity: 0
+        });
+
+
+  </script>
+
+  <body>
+    <section>
+      <div class="hero-card">
+        <div class="sub-heading">16th September 2024</div>
+        <div class="title">World Sucide<span>Prevention</span></div>
+      </div>
+    </section>
+
+    <section id="2" style="display: none;">
+      <div class="section2-container">
+        <div class="corner-text top-left">Top Left</div>
+        <div class="corner-text top-right">Top Right</div>
+        <div class="corner-text bottom-left">Bottom Left</div>
+        <div class="corner-text bottom-right">Bottom Right</div>
+      </div>
+    </section>
+
+    <!-- MythFact Section 1-->
+    <section class="main-flow bgcolor-myth card1">
+      <div class="row cardborder bgcolor-card">
+        <h1 class="card-num font1">1</h1>
+        <div class="row">
+          <div class="col-md-6 myth-sec">
+            <div class="card bgcolor-card">
+              <div class="card-body">
+                <h2 class="card-title">Myth</h2>
+                <p class="card-p">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo cumque temporibus laboriosam, labore animi
+                  necessitatibus culpa odio, aliquam harum beatae reiciendis
+                  tempore veritatis sapiente molestias eum. Totam rem nemo odit?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card bgcolor-card">
+              <div class="card-body">
+                <h2 class="card-title">Facts</h2>
+                <p class="card-p">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo cumque temporibus laboriosam, labore animi
+                  necessitatibus culpa odio, aliquam harum beatae reiciendis
+                  tempore veritatis sapiente molestias eum. Totam rem nemo odit?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MythFact Section 2-->
+    <section class="main-flow bgcolor-myth card2">
+      <div class="row cardborder bgcolor-card">
+        <h1 class="card-num font1">2</h1>
+        <div class="row">
+          <div class="col-md-6 myth-sec">
+            <div class="card bgcolor-card">
+              <div class="card-body">
+                <h2 class="card-title">Myth</h2>
+                <p class="card-p">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo cumque temporibus laboriosam, labore animi
+                  necessitatibus culpa odio, aliquam harum beatae reiciendis
+                  tempore veritatis sapiente molestias eum. Totam rem nemo odit?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card bgcolor-card">
+              <div class="card-body">
+                <h2 class="card-title">Facts</h2>
+                <p class="card-p">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo cumque temporibus laboriosam, labore animi
+                  necessitatibus culpa odio, aliquam harum beatae reiciendis
+                  tempore veritatis sapiente molestias eum. Totam rem nemo odit?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MythFact Section 3-->
+    <section class="main-flow bgcolor-myth card3">
+      <div class="row cardborder bgcolor-card">
+        <h1 class="card-num font1">3</h1>
+        <div class="row">
+          <div class="col-md-6 myth-sec">
+            <div class="card bgcolor-card">
+              <div class="card-body">
+                <h2 class="card-title">Myth</h2>
+                <p class="card-p">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo cumque temporibus laboriosam, labore animi
+                  necessitatibus culpa odio, aliquam harum beatae reiciendis
+                  tempore veritatis sapiente molestias eum. Totam rem nemo odit?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card bgcolor-card">
+              <div class="card-body">
+                <h2 class="card-title">Facts</h2>
+                <p class="card-p">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo cumque temporibus laboriosam, labore animi
+                  necessitatibus culpa odio, aliquam harum beatae reiciendis
+                  tempore veritatis sapiente molestias eum. Totam rem nemo odit?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MythFact Section 4-->
+    <section class="main-flow bgcolor-myth card4">
+      <div class="row cardborder bgcolor-card">
+        <h1 class="card-num font1">4</h1>
+        <div class="row">
+          <div class="col-md-6 myth-sec">
+            <div class="card bgcolor-card">
+              <div class="card-body">
+                <h2 class="card-title">Myth</h2>
+                <p class="card-p">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo cumque temporibus laboriosam, labore animi
+                  necessitatibus culpa odio, aliquam harum beatae reiciendis
+                  tempore veritatis sapiente molestias eum. Totam rem nemo odit?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card bgcolor-card">
+              <div class="card-body">
+                <h2 class="card-title">Facts</h2>
+                <p class="card-p">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo cumque temporibus laboriosam, labore animi
+                  necessitatibus culpa odio, aliquam harum beatae reiciendis
+                  tempore veritatis sapiente molestias eum. Totam rem nemo odit?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MythFact Section 5-->
+    <section class="main-flow bgcolor-myth card5">
+      <div class="row cardborder bgcolor-card">
+        <h1 class="card-num font1">5</h1>
+        <div class="row">
+          <div class="col-md-6 myth-sec">
+            <div class="card bgcolor-card">
+              <div class="card-body">
+                <h2 class="card-title">Myth</h2>
+                <p class="card-p">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo cumque temporibus laboriosam, labore animi
+                  necessitatibus culpa odio, aliquam harum beatae reiciendis
+                  tempore veritatis sapiente molestias eum. Totam rem nemo odit?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card bgcolor-card">
+              <div class="card-body">
+                <h2 class="card-title">Facts</h2>
+                <p class="card-p">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo cumque temporibus laboriosam, labore animi
+                  necessitatibus culpa odio, aliquam harum beatae reiciendis
+                  tempore veritatis sapiente molestias eum. Totam rem nemo odit?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
